@@ -50,20 +50,27 @@ We have to desing the regular expression according with the following structure:
 
 ##### Names
 
-The names could be represented with the same *sub regular expression* less the **Second Family Name** that is optional and the Marital Status that are just comoposed by two letters {C,S}. That is one that match a group of alphabetic letters without numbers or other types of characters so, being A = {'a','b','c',...,'y','z'} our alphabet then our RE = A+ = a so the language it defines is L(A+)={'a', 'ab',...} in other words, defines the language of all combinations of the letter in the alphabet. In any programming language this will be achieved with the *re*:
+The names could be represented with the same *sub regular expression* less the **Second Family Name** that is optional and the Marital Status that are just comoposed by two letters {C,S}. That is one that match a group of alphabetic letters without numbers or other types of characters so, being A = {'a','b','c',...,'y','z'} our alphabet then our RE = A+ so the language it defines is L(A+)={'a', 'ab',...} in other words, defines the language of all combinations of the letters in the alphabet. In any programming language this will be achieved with the *RE*:
+
 ```python
 [a-z]+
 ```
-We will represent this RE with the letter N.
+We will represent this RE with the letter *N*.
 
 #### Optional Name
 
+The optional name its the same than the before *RE* *N*, we will use the same alphabet but with a significant difference, now we will apply the *Kleene closure* over the alphabet *A* to accept the empty word \epsilon so this *RE* accepts the language L(A*) = {ɛ, 'a', 'ab', ... }. In other words, a language that accepts *names* or nothing.
 
+In any programming language this will be achieved with the *RE*:
 
-
+```python
+[a-z]*
+```
+ 
 ### Comma
 
-The next one will be comma, so the symbol "," is a RE and L(',') = {','},we will represent this RE with the letter C. Also, most of words are follows by comma, so to do that, we will use the concatenation with that RE's to impose de condition that the words accepted are followed by a comma.
+The next one will be comma, so the symbol "," is a RE and L(',') = {','}, we will represent this RE with the letter *C*. 
+Also, most of words are follows by comma, so to do that, we will use the concatenation with that RE's to impose de condition that the words accepted are followed by a comma.
 
 
 
