@@ -36,3 +36,21 @@ Submit a zip file named with your initials, including:
 - Include the source code of your program.
 
 - Add a file with a representative set of input test cases (for both accepted and rejected strings).
+
+
+# Report
+
+### RE Desing
+
+In first place we have to desing the regular expression according with the following structure:
+```
+First Name,First Family Name,Second Family Name (optional),Age,City,Marital Status.
+```
+
+The names could be represented with the same *sub regular expression* less the **Second Family Name** that is optional and the Marital Status that are just comoposed by two letters. That is one that match a group of alphabetic letters without numbers or other types of characters so, being A = {'a','b','c',...,'y','z'} our alphabet then our RE = A+ = a so the language it defines is L(a)={'a', 'ab',...} in other words, defines the language of all combinations of the letter in the alphabet. In any programming language this will be achieved with the *re*:
+```
+[a-z]+
+```
+
+
+
