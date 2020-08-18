@@ -72,6 +72,17 @@ In any programming language this will be achieved with the *RE*:
 The next one will be comma, so the symbol "," is a RE and L(',') = {','}, we will represent this RE with the letter *C*. 
 Also, most of words are follows by comma, so to do that, we will use the concatenation with that RE's to impose de condition that the words accepted are followed by a comma.
 
+### Age
+
+Now we need a *RE* that accepts numbers greater or equal than 28 and less or equal than 99. So being the alphabet B = {0, 1, 2 ,3 ,4 ,5 ,6 ,7, 8 ,9} we can generate de *RE* that accepts the language L(B+) which is the language that accepts all the words compound by all the possible combinations of the digits in B. But we need a subset of B we will define this *RE* with the letter *D*. For one hand we need all the number greater or equal than 28 so we can construct a *RE* that accepts that language using the alphabet B' = {2} and the alphabet B'' = {8, 9} and concatenate both creating a *RE* = L(B'B''). We can do the same for the numbers greater or equal than 30 and less or equal than 99 using the alphabets B''' = {3, 4, 5, 6, 7 ,8, 9} and B and concatenate both resulting in the *RE* = L(B'''B) = {30, 31, 32, ... , 51, 52, ... , 89, 90, ... 99} and we will define this *RE* with the letter *D'*. Finally to get the *RE* that defines the language that we need we will use the union of both *RE*, so our new *RE* = L(D U D') = {28, 29, 30, 31, ..., 99}, and we will rename this  *RE* with the letter *G*.
+
+In any programming language whis will be achieves with the *RE*:
+
+```python
+(2[8-9])|([3-9][0-9])
+```
+
+
 
 
 
