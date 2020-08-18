@@ -42,15 +42,30 @@ Submit a zip file named with your initials, including:
 
 ### RE Desing
 
-In first place we have to desing the regular expression according with the following structure:
+We have to desing the regular expression according with the following structure:
+
 ``` python
 'First Name,First Family Name,Second Family Name (optional),Age,City,Marital Status'
 ```
 
-The names could be represented with the same *sub regular expression* less the **Second Family Name** that is optional and the Marital Status that are just comoposed by two letters. That is one that match a group of alphabetic letters without numbers or other types of characters so, being A = {'a','b','c',...,'y','z'} our alphabet then our RE = A+ = a so the language it defines is L(a)={'a', 'ab',...} in other words, defines the language of all combinations of the letter in the alphabet. In any programming language this will be achieved with the *re*:
+##### Names
+
+The names could be represented with the same *sub regular expression* less the **Second Family Name** that is optional and the Marital Status that are just comoposed by two letters {C,S}. That is one that match a group of alphabetic letters without numbers or other types of characters so, being A = {'a','b','c',...,'y','z'} our alphabet then our RE = A+ = a so the language it defines is L(A+)={'a', 'ab',...} in other words, defines the language of all combinations of the letter in the alphabet. In any programming language this will be achieved with the *re*:
 ```python
 [a-z]+
 ```
+We will represent this RE with the letter N.
+
+#### Optional Name
+
+
+
+
+### Comma
+
+The next one will be comma, so the symbol "," is a RE and L(',') = {','},we will represent this RE with the letter C. Also, most of words are follows by comma, so to do that, we will use the concatenation with that RE's to impose de condition that the words accepted are followed by a comma.
+
+
 
 
 
