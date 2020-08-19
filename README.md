@@ -127,6 +127,14 @@ In any programming language this will be achieved with the *RE*:
 ([a-z]+,)?
 ```
 
+Now we can create a new *RE* to check the correctness of the entries just using the concatenation over all our *REs* just like that:
+
+```python
+NCNCOGCS
+```
+
+It we follow the recursive concatenation operations you will observe that the language that defines that *RE* is L(NCNCOGCS)= L(N)L(C)L(N)L(O)L(G)L(C)L(S) that follows the same structure and with the restriction that we was searching for.
+
 
 
 
