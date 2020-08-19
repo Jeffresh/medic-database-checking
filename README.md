@@ -135,6 +135,15 @@ NCNCOGCS
 
 It we follow the recursive concatenation operations you will observe that the language that defines that *RE* is L(NCNCOGCS)= L(N)L(C)L(N)L(O)L(G)L(C)L(S) that follows the same structure and with the restriction that we was searching for.
 
+In any programming language this will be achieved with the *RE*:
+
+```python
+([a-z]+,)([a-z]+,)([a-z]+,)?(2[8-9]|[3-9][0-9]),[CD]
+```
+
+How you can see, its very similar to the definitions that we constructed in each step, even if you dont know about *REs* in programming, its very understable.
+
+
 
 
 
