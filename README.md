@@ -68,6 +68,8 @@ In any programming language this will be achieved with the *RE*:
 ```python
 [a-z]*
 ```
+
+We will represent this RE with the letter *O*.
  
 
 #### Age
@@ -79,6 +81,7 @@ In any programming language whis will be achieves with the *RE*:
 ```python
 (2[8-9])|([3-9][0-9])
 ```
+We will represent this RE with the letter *G*.
 
 ### Status
 
@@ -88,6 +91,8 @@ In any programming language whis will be achieves with the *RE*:
 ```python
 [CD]
 ```
+
+We will represent this RE with the letter *S*.
 
 ### Comma
 
@@ -99,6 +104,33 @@ In any programming language this will be achieved with the *RE*:
 ```python
 ,
 ```
+
+We will represent this RE with the letter *C*.
+
+
+### Putting it all together
+
+With this five *RE's* we can accept all correct parts of the structure of the entries, but we have to accept the entire entries, so we need a *RE* that allows us accept a entire entry (correct). We will achieve that constructing that *RE* joining and combining our five *RE's* using the available operations.
+
+In this case we use de concatenation of the all *RE's* with the comma *RE* except the last one, becase after every word in the structure is followed by a comma. But we have problem, and is that if we concatenate de *Optional RE* with the *Comma RE* we can accept a word that is just the comma, before the second name, so we have to modify the *Optional RE*.
+
+#### Modifying Optional RE
+Using the same alphabet A = {'a','b','c',...,'y','z'} the *Comma RE* , a new *RE* composed by ɛ which language is L(ɛ) = {ɛ}  the *positive closure* of A = L(A+) and the concatenation and the union operation we will get our desired * Optional RE*.
+
+Because every letter are a *RE* the concatenation is equal to the concatenation of the languages so having L(A+) we just have to use concatenation with the *Comma RE* to get a *RE* that defines the language that accept any combinations of the alphabet followed by the comma, we will represent that *RE* with the *O'*. Now to add the possibility of be optional (empty word) to the language we just use the union operation L(O' + ɛ) = {ɛ, 'a,', 'b,', ..., 'aabb,'...}.
+
+We will represent this RE with the letter *O* again.
+
+In any programming language this will be achieved with the *RE*:
+
+```python
+([a-z]+,)?
+```
+
+
+
+
+
 
 
 
