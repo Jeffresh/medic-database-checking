@@ -166,6 +166,13 @@ In the case of age, we used the union operation on two *REs* to accept for one h
 The comma *RE* is the most simple of all our *REs* and the most simple automata because is a *RE* to accept one symbol:
 
 
+#### Status
+
+The status is the union of two *REs* one that accept the symbol 'C' and one that accept the symbol 'S' so :
+
+
+
+
 
 
 
