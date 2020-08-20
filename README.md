@@ -83,7 +83,7 @@ In any programming language whis will be achieves with the *RE*:
 ```
 We will represent this RE with the letter *G*.
 
-### Status
+#### Status
 
 To accept the words that represent de marital status we just need a *RE* that defines the language composed by {C,S}. So being a alphabet T = {C,S} and our *RE* a symbol of that alphabet, defined as *S*, we got the *RE* that defines the language L(S) = {C, S}. We can achieve the same result defining two *RE's* per each symbol {C,S} and doing the union of the *RE's*
 
@@ -94,7 +94,7 @@ In any programming language whis will be achieves with the *RE*:
 
 We will represent this RE with the letter *S*.
 
-### Comma
+#### Comma
 
 The next one will be comma, so the symbol "," is a RE and L(',') = {','}, we will represent this RE with the letter *C*. 
 Also, most of words are follows by comma, so to do that, we will use the concatenation with that RE's to impose de condition that the words accepted are followed by a comma.
@@ -145,7 +145,13 @@ How you can see, its very similar to the definitions that we constructed in each
 
 
 
+### Converting the obtained RE to an ℇ-NFA;
 
+Now we will convert our *RE* to his equivalent ℇ-NFA following the Thompson method. For that we will transform each sub *Re* into a ℇ-NFA and then concatenate all the parts.
+
+#### Names
+
+The names was a *RE* N that the defines the language N that is composed by all the combinations of alphabet letters, to simplify the automata, we will define all the possible letter as "letter'
 
 
 
