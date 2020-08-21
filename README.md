@@ -171,6 +171,7 @@ In the case of age, we used the union operation on two *REs* to accept for one h
 
 The comma *RE* is the most simple of all our *REs* and the most simple automata because is a *RE* to accept one symbol:
 
+![comma automata](/assets/comma.jpg)
 
 #### Status
 
