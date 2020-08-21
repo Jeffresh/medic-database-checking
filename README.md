@@ -177,6 +177,8 @@ The comma *RE* is the most simple of all our *REs* and the most simple automata 
 
 The status is the union of two *REs* one that accept the symbol 'C' and one that accept the symbol 'S' so :
 
+![status automata](/assets/status.jpg)
+
 
 
 
