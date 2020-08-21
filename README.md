@@ -159,6 +159,8 @@ The names was a *RE* N that the defines the language N that is composed by all t
 
 The optional name is just the same *RE* that name but optional, so the automata, using *Kleene closure* and the *Thomson method* the automata is:
 
+![optional name automata](/assets/name_optional.jpg)
+
 #### Age
 
 In the case of age, we used the union operation on two *REs* to accept for one hand = {28, 29} and for other and = {30, 31, 32, ..., 99} so using *Thomson method* the automata is:
