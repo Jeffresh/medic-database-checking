@@ -153,6 +153,8 @@ Now we will convert our *RE* to his equivalent ℇ-NFA following the *Thompson m
 
 The names was a *RE* N that the defines the language N that is composed by all the combinations of alphabet letters, to simplify the automata, we will define all the possible letter as "letter'
 
+![names automata](/assets/name.jpg)
+
 #### Optional Name
 
 The optional name is just the same *RE* that name but optional, so the automata, using *Kleene closure* and the *Thomson method* the automata is:
