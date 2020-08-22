@@ -194,9 +194,11 @@ So again, using *Thompson method* definition to concatenate operation we get:
 Remember that letter is any symbol of the alphabet and E is a epsilon transition.
 
 
+# Transforming the ℇ-NFA to DFA
 
-
-
+To do that first we have to do the transformation from ℇ-NFA to NFA. So we have to remove all the ℇ(E) transitions.
+For that we will apply the algorithm for ℇ removal. To apply this algorithm, the first step is to compute the closure of
+every state so:
 
 
 
