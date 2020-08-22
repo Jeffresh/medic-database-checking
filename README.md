@@ -180,6 +180,26 @@ The status is the union of two *REs* one that accept the symbol 'C' and one that
 ![status automata](/assets/status.jpg)
 
 
+#### Putting all together
+
+Now to finish our ℇ-NFA we just have to concatenate all the parts like:
+```python
+NCNCOGCS
+```
+
+So again, using *Thompson method* definition to concatenate operation we get:
+
+![complete_automata](/assets/complete-automata.jpg)
+
+
+
+
+
+
+
+
+
+
 
 
 
