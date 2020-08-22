@@ -191,6 +191,8 @@ So again, using *Thompson method* definition to concatenate operation we get:
 
 ![complete_automata](/assets/complete-automata.jpg)
 
+Remember that letter is any symbol of the alphabet and E is a epsilon transition.
+
 
 
 
