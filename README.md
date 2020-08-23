@@ -213,7 +213,7 @@ but in this case we will use the columns named before.
 Now having the closure we can build our NFA. We just have to observe the values for each entry for the nodes
 in the closure for each row. The result is:
 
-![complete_automata](/assets/enfa-transition-table-cl.jpg)
+![complete_automata](/assets/nfa-transition-table.jpg)
 
 
 
