@@ -196,9 +196,18 @@ Remember that letter is any symbol of the alphabet and E is a epsilon transition
 
 # Transforming the ℇ-NFA to DFA
 
+
+####  ℇ-NFA to NFA
 To do that first we have to do the transformation from ℇ-NFA to NFA. So we have to remove all the ℇ(E) transitions.
 For that we will apply the algorithm for ℇ removal. To apply this algorithm, the first step is to compute the closure of
-every state so:
+every state so we first we will build the transition table and using it, we will get the closure of every state.
+
+In this table we have a row for every state and a column for the entries "letter", ",",  every number(0 to 9) and "C" and "S".
+It's possibly to reduce the number of columns, for example using a column for "numbers", other for ">=3" and other for {2,3}
+but in this case we will use the columns named before.
+
+
+
 
 
 
