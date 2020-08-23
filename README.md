@@ -206,6 +206,8 @@ In this table we have a row for every state and a column for the entries "letter
 It's possibly to reduce the number of columns, for example using a column for "numbers", other for ">=3" and other for {2,3}
 but in this case we will use the columns named before.
 
+The closure is showed in the blue column named CL. The E transitions is named with E with a red background
+
 
 ![complete_automata](/assets/enfa-transition-table-cl.jpg)
 
