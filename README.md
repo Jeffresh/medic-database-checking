@@ -207,7 +207,7 @@ It's possibly to reduce the number of columns, for example using a column for "n
 but in this case we will use the columns named before.
 
 
-
+![complete_automata](/assets/enfa-transition-table-cl.jpg)
 
 
 
