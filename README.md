@@ -237,16 +237,29 @@ And his transition table:
 
 ![complete_automata](/assets/enfa-clean-transition-table.jpg)
 
-Just doing the conversiont to NFA and removing the unreachable states, we pass from a automata with 37 states to 15 states.
-
-
-
+Just doing the conversion to NFA and removing the unreachable states, we pass from a automata with 37 states to 15 states.
 
 
 ### NFA to DFA
 
-To convert a NFA to DFA  we only need one thing, add a new state and substitute the "empty" with a transition
-to that state for each entry symbol
+To convert a NFA to DFA  we only need one thing, add a new state and substitute the "empty set" with a transition
+to that state for each entry symbol. This new state will be named by "X" and is a dead state, that's means that wen is reached
+it's not possible to get out over it and the word is rejected.
+
+This type of states is very important and useful because if we want the complementary of the language that 
+define the automata, we just have to convert this state in final state, and delete de original final states.
+Getting as accepted all the words that reject the original automata.
+
+To represent this on the automata and trying to be cleaner as possible, we will define the transition to this new
+state "X" with set notation. "Σ" will represent the alphabet of our automata and Σ - {symbols} will represent
+any entry on the alphabet but not the symbols intro brackets. Even doing this, the automata turned messy:
+
+![complete_automata](/assets/DFA.jpg)
+
+
+
+
+
 
 
 
