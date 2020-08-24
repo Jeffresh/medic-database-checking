@@ -242,9 +242,12 @@ Just doing the conversion to NFA and removing the unreachable states, we pass fr
 
 ### NFA to DFA
 
-To convert a NFA to DFA  we only need one thing, add a new state and substitute the "empty set" with a transition
-to that state for each entry symbol. This new state will be named by "X" and is a dead state, that's means that wen is reached
-it's not possible to get out over it and the word is rejected.
+To convert a NFA to DFA, first we have to convert the sets of transitions to transition to only one state,
+in this case we are so lucky because all our state sets only contain 1 state, so we have to nothing on the automata and
+only remove the brackets on the transition table. So to finish the conversion from NFA we only need to do one thing, 
+add a new state and substitute the "empty set" with a transition to that state for each entry symbol. 
+This new state will be named by "X" and is a dead state, that's means that when is reached
+it's not possible to leave it and the word is rejected no matter what the next symbols of the word, just like a black hole.
 
 This type of states is very important and useful because if we want the complementary of the language that 
 define the automata, we just have to convert this state in final state, and delete de original final states.
@@ -260,6 +263,33 @@ any entry on the alphabet but not the symbols intro brackets. Even doing this, t
 So its better work with the transition table representation, in blue the transitions to the same state, the dead state X.
 
 ![complete_automata](/assets/dfa-transition-table.jpg)
+
+
+#### Getting the minimum DFA
+
+To finish the conversion we will try to reduce more our automata using the "State minimization algorithm". The algorithm
+is quite easy to apply in this case because we have a lot of transitions with the same states, and after marking de final
+states with all other states except themselves, using the "X" state value to open almost every state with "L" over "I" and
+"K" every state starts to be marked due to domino effect, getting:
+
+![complete_automata](/assets/minimization.jpg)
+
+The blocks coloured in red are the states marked the white ones the indistinguishable states, in this case
+the states ["I","K"] and ["M", "N"] are the same states! so we can simplify the automata even more:
+
+![complete_automata](/assets/dfa-automata-minimized.jpg)
+
+And the transition table:
+
+![complete_automata](/assets/dfa-minimized-transition-table-.jpg)
+
+
+
+
+
+
+
+
 
 
 
