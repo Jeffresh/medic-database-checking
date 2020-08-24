@@ -324,7 +324,7 @@ And we will use this to generate our DFA:
 
 As you can see if your aren't blind yet, there are a lot of unreachable states, so we will remove it:
 
-![complete_automata](/assets/dfa-product.jpg)
+![complete_automata](/assets/dfa-minimized-product.jpg)
 
 We get this automata, that as you can see accept the same words that the first automata but with
 age 28 or 29! if you think about it has sense, the restriction about the age in the first automata was
