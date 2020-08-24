@@ -251,10 +251,16 @@ define the automata, we just have to convert this state in final state, and dele
 Getting as accepted all the words that reject the original automata.
 
 To represent this on the automata and trying to be cleaner as possible, we will define the transition to this new
-state "X" with set notation. "Σ" will represent the alphabet of our automata and Σ - {symbols} will represent
+state "X" with set notation. "Σ" will represent the alphabet (every entry value) of our automata and "Σ - {symbols}" will represent
 any entry on the alphabet but not the symbols intro brackets. Even doing this, the automata turned messy:
 
 ![complete_automata](/assets/DFA.jpg)
+
+
+So its better work with the transition table representation, in blue the transitions to the same state, the dead state X.
+
+![complete_automata](/assets/dfa-transition-table.jpg)
+
 
 
 
