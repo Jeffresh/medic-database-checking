@@ -112,7 +112,7 @@ We will represent this RE with the letter *C*.
 
 With this five *RE's* we can accept all correct parts of the structure of the entries, but we have to accept the entire entries, so we need a *RE* that allows us accept a entire entry (correct). We will achieve that constructing that *RE* joining and combining our five *RE's* using the available operations.
 
-In this case we use de concatenation of the all *RE's* with the comma *RE* except the last one, becase after every word in the structure is followed by a comma. But we have problem, and is that if we concatenate de *Optional RE* with the *Comma RE* we can accept a word that is just the comma, before the second name, so we have to modify the *Optional RE*.
+In this case we use de concatenation of the all *RE's* with the comma *RE* except the last one, because after every word in the structure is followed by a comma. But we have problem, and is that if we concatenate de *Optional RE* with the *Comma RE* we can accept a word that is just the comma, before the second name, so we have to modify the *Optional RE*.
 
 #### Modifying Optional RE
 Using the same alphabet A = {'a','b','c',...,'y','z'} the *Comma RE* , a new *RE* composed by ɛ which language is L(ɛ) = {ɛ}  the *positive closure* of A = L(A+) and the concatenation and the union operation we will get our desired * Optional RE*.
@@ -141,7 +141,7 @@ In any programming language this will be achieved with the *RE*:
 ([a-z]+,)([a-z]+,)([a-z]+,)?(2[8-9]|[3-9][0-9]),[CD]
 ```
 
-How you can see, its very similar to the definitions that we constructed in each step, even if you dont know about *REs* in programming, its very understable.
+How you can see, its very similar to the definitions that we constructed in each step, even if you dont know about *REs* in programming, its very understandable.
 
 
 
@@ -282,6 +282,27 @@ the states ["I","K"] and ["M", "N"] are the same states! so we can simplify the 
 And the transition table:
 
 ![complete_automata](/assets/dfa-minimized-transition-table-.jpg)
+
+
+### DFA age < 30   
+
+Now we have to design a automata that accept entries (correct or not) with age < 30. In other words,
+a simple DFA that in the word contains one two digits number less than 30, no matter what the position in the word
+or if follow the correct structure. Our alphabet will be the same of the first DFA, so the entry symbols could 
+be alphanumeric and the comma:
+
+![complete_automata](/assets/30less-dfa.jpg)
+
+In this case to simply the transition we use "Σ - {symbols}" like before, to represent any symbol except {symbols}, 
+"digit" it's a number in the range [0-9], it's the same than {<3, >=3} so in the automata we will use the 
+two notations and "<3" its a digit in the range [0-2] and ">=3" a number in the range [3,9].
+
+Whe need two final states because the age could be anywhere in the structure, in the end, middle or end of the word, and in 
+the case that are two ages or ages greater or equal than 30, or ages with only a digit or more than 2 digits, we have a transition to 
+a dead state "X".
+
+
+
 
 
 
