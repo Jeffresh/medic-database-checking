@@ -225,7 +225,12 @@ There are many unreachable
 steps! so before to go into the conversion from NFA to DFA, we will delete this states. Getting a more clean and simplified
 automata to work with, and turning the conversion into a easier job. Doing that we get this automata:
 
-![complete_automata](/assets/nfa-automata.jpg)
+![complete_automata](/assets/nfa-no-unreachable.jpg)
+
+As you can see, it is a more easier automata to work with and more understandable. Now the last step before doing the
+conversion to a DFA, will be rename the states to maintain the name linearity and get his transition table.
+
+
 
 
 ### NFA to DFA
