@@ -228,9 +228,18 @@ automata to work with, and turning the conversion into a easier job. Doing that 
 ![complete_automata](/assets/nfa-no-unreachable.jpg)
 
 As you can see, it is a more easier automata to work with and more understandable. Now the last step before doing the
-conversion to a DFA, will be rename the states to maintain the name linearity and get his transition table.
+conversion to a DFA, will be rename the states to maintain the name linearity and get his transition table. Here is the 
+automata:
 
 ![complete_automata](/assets/nfa-renamed.jpg)
+
+And his transition table:
+
+![complete_automata](/assets/enfa-clean-transition-table.jpg)
+
+Just doing the conversiont to NFA and removing the unreachable states, we pass from a automata with 37 states to 15 states.
+
+
 
 
 
