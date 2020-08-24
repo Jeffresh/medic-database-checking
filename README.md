@@ -223,7 +223,10 @@ If you draw the automata, you can observe will observe some interesting things m
 
 There are many unreachable 
 steps! so before to go into the conversion from NFA to DFA, we will delete this states. Getting a more clean and simplified
-automata to work with, and turing the conversion into a easier job.
+automata to work with, and turning the conversion into a easier job. Doing that we get this automata:
+
+![complete_automata](/assets/nfa-automata.jpg)
+
 
 ### NFA to DFA
 
