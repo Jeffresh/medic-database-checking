@@ -297,9 +297,11 @@ In this case to simply the transition we use "Σ - {symbols}" like before, to re
 "digit" it's a number in the range [0-9], it's the same than {<3, >=3} so in the automata we will use the 
 two notations and "<3" its a digit in the range [0-2] and ">=3" a number in the range [3,9].
 
-Whe need two final states because the age could be anywhere in the structure, in the end, middle or end of the word, and in 
+Whe need one final state with a transition to itself because the age could be anywhere in the structure, in the end, middle or end of the word, and in 
 the case that are two ages or ages greater or equal than 30, or ages with only a digit or more than 2 digits, we have a transition to 
 a dead state "X".
+
+![complete_automata](/assets/30-less-transition-table.jpg)
 
 
 
