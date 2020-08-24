@@ -230,6 +230,7 @@ automata to work with, and turning the conversion into a easier job. Doing that 
 As you can see, it is a more easier automata to work with and more understandable. Now the last step before doing the
 conversion to a DFA, will be rename the states to maintain the name linearity and get his transition table.
 
+![complete_automata](/assets/nfa-renamed.jpg)
 
 
 
