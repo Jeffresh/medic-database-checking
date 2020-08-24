@@ -303,6 +303,46 @@ a dead state "X".
 
 ![complete_automata](/assets/30-less-transition-table.jpg)
 
+### Combine the two DFA's
+
+Now we will combine the two *DFa's* to accepting the correct entries with age less than 30. To to that we will
+apply the product automaton method. We will use the the two *DFA's* transition table and combine 
+all the states by pairs:
+
+![complete_automata](/assets/two-transition-tables-product.jpg)
+
+Then create a new table per each combination of states of the two *DFA's* and fill with the values of 
+each cell. The trick to not die doing this is just observe the cells in which both the values are different
+that "X". Remember that X is a dead state to the words rejected. To not die doing this we will reduce all "-X | X-" 
+states with "X" through all the process, and using the notation "<3, ">3", digit, letter, etc in our automata.
+
+![complete_automata](/assets/three-transition-table-product.jpg)
+
+And we will use this to generate our DFA:
+
+![complete_automata](/assets/dfa-product.jpg)
+
+As you can see if your aren't blind yet, there are a lot of unreachable states, so we will remove it:
+
+![complete_automata](/assets/dfa-product.jpg)
+
+We get this automata, that as you can see accept the same words that the first automata but with
+age 28 or 29! if you think about it has sense, the restriction about the age in the first automata was
+28<= age <=30 and the second automata accept words with age < 30, so the combination of both is the first automata
+with a restriction on the age=  28<= age < 30.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
