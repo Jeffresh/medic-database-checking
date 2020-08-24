@@ -217,6 +217,19 @@ in the closure for each row. The result is:
 
 ![complete_automata](/assets/nfa-transition-table.jpg)
 
+If you draw the automata, you can observe will observe some interesting things more clearly. 
+
+![complete_automata](/assets/nfa-automata.jpg)
+
+There are many unreachable 
+steps! so before to go into the conversion from NFA to DFA, we will delete this states. Getting a more clean and simplified
+automata to work with, and turing the conversion into a easier job.
+
+### NFA to DFA
+
+To convert a NFA to DFA  we only need one thing, add a new state and substitute the "empty" with a transition
+to that state for each entry symbol
+
 
 
 
