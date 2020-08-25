@@ -17,6 +17,14 @@ letter_column = Letter()
 columns = [letter_column, ","] + [str(i) for i in range(10)] + ['C', 'S']
 
 
+def generate_table(values):
+    transition_table = [["X"] * 14 for _ in range(12)]
+    for key, value in values.items():
+        for index in value:
+            transition_table[index[0]][index[1]] = key
+    return transition_table
+
+
 def get_data(file_path):
     with open(file_path) as medic_database:
         data = medic_database.readlines()
