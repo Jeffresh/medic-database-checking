@@ -18,11 +18,11 @@ columns = [letter_column, ","] + [str(i) for i in range(10)] + ['C', 'S']
 
 
 def generate_table(values):
-    transition_table = [["X"] * 14 for _ in range(12)]
+    table = [["X"] * 14 for _ in range(12)]
     for key, value in values.items():
         for index in value:
-            transition_table[index[0]][index[1]] = key
-    return transition_table
+            table[index[0]][index[1]] = key
+    return table
 
 
 def get_data(file_path):
@@ -48,6 +48,7 @@ if __name__ == '__main__':
     #     print(entry)
 
     table_values = {'B': [[0, 0], [1, 0]], 'C': [[1, 1]], 'D': [[2, 0], [3, 0]], 'E': [[3, 1]],
-              'F': [[4, 0], [5, 0]], 'G': [[5, 1]], 'H': [[4, 4], [6, 4]], 'I': [[7, 10], [7, 11]],
-              'J': [[8, 1]], 'K': [[9, 12], [9, 13]]}
-    print_table(generate_table(table_values))
+                    'F': [[4, 0], [5, 0]], 'G': [[5, 1]], 'H': [[4, 4], [6, 4]], 'I': [[7, 10], [7, 11]],
+                    'J': [[8, 1]], 'K': [[9, 12], [9, 13]]}
+
+    transition_table = generate_table(table_values)
