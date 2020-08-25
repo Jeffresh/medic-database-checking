@@ -49,6 +49,11 @@ result of "name, name" just like a lego. Even you can separate each part, work w
 resulting automatas, because for the properties of the *RE's* the language defined by the concatenation is the same
 than the concatenation of the languages of each *RE's*.
 
+Another thing is that if you have a automata that accept a define a language, the negation, in this case obtain the 
+incorrect entries it's easily achieved sending that words to a dead state and turning that dead state into a final state.
+So we will develop the automata in that way, getting the correct ones and manage the transitions to implement a dead state
+and in the end get both languages.
+
 ### RE Design
 
 We have to design the regular expression according with the following structure:
@@ -377,8 +382,10 @@ table as a list of lists and then, each symbol will represent the column and the
 starting by the initial state (row = A = 0). And in case that the row is equal to "X" (a dead state) we have not to check the entry until the end
 the entry its automatically a not valid entry, and if it finish in the row = "M" (final state), the entry is accepted.
 
-The source code is in the \src folder and read a file of possible entries located in \data folder. And when it's executed
-generate two files, one with the accepted entries and another with the rejected entries.
+The source code is in the \src folder and the program read a file of possible entries located in \data folder. And when it's executed
+generate two files, one with the accepted entries and another with the rejected entries in the same location of the program (\src).
+
+#### Python version 3.7
 
 
 
