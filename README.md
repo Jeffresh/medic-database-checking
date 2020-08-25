@@ -340,6 +340,22 @@ age 28 or 29! if you think about it has sense, the restriction about the age in 
 28<= age <=30 and the second automata accept words with age < 30, so the combination of both is the first automata
 with a restriction on the age=  28<= age < 30.
 
+To finish we will add the automata of "City", to accept the complete structure:
+
+![complete_automata](/assets/dfa-automata-product-renamed-city.jpg)
+
+And here is the transition table:
+
+![complete_automata](/assets/dfa-minimized-product-transition-table-city.jpg)
+
+We will use this transition table to create a final program in python to accept or reject the entries (is in \src).
+
+
+
+
+
+
+
 
 
 
