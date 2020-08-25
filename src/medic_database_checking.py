@@ -1,3 +1,4 @@
+import re
 import string
 
 letter_UP = string.ascii_uppercase
@@ -62,3 +63,6 @@ if __name__ == '__main__':
     print_table(transition_table)
 
     check_entries(data_entries, transition_table)
+
+    re.compile(r'([a - z] +,)([a - z] +, )([a - z] +, )?(2[8 - 9] | [3 - 9][0 - 9]),[CD]')
+
