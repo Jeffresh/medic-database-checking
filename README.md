@@ -1,8 +1,9 @@
 # Medic database checking
-Desing a system to check the incorrect entries of a database using Finite Automatas and Regular Expression
+Design a system to check incorrect/correct entries of a database using Finite Automatas and Regular Expressions.
 
 
-# Description
+# Description - Work to do
+
 At the Spanish Ministry of Health they have a file containing a database of all medical doctors in the country. It is a list of the entries of all doctors, and each entry is a list of comma separated values with the following structure:
 
 First Name,First Family Name,Second Family Name (optional),Age,City,Marital Status
@@ -38,7 +39,15 @@ Submit a zip file named with your initials, including:
 - Add a file with a representative set of input test cases (for both accepted and rejected strings).
 
 
-# Report
+# Technical Report
+
+There is a lot of ways to do this, in this case the main strategy will be try to reduce the number of states or 
+parts of the automata when it possible, because work with automatas and operate with them or transition tables is really
+a painstaking work. Analyzing the structure we can observe that is formed for several repetitions of the same part.For example the
+"city" part describe the same behavior than "name, name" so we can reduce it and then apply in the same way that the final
+result of "name, name" just like a lego. Even you can separate each part, work with them and finally concatenate the
+resulting automatas, because for the properties of the *RE's* the language defined by the concatenation is the same
+than the concatenation of the languages of each *RE's*.
 
 ### RE Design
 
@@ -48,7 +57,7 @@ We have to design the regular expression according with the following structure:
 'First Name,First Family Name,Second Family Name (optional),Age,City,Marital Status'
 ```
 
-So decomposing the structure, we need 5 *RE* to accept all parts of the structure:
+So, decomposing the structure, we need 5 *RE* to accept all parts of the structure:
 
 ##### Names
 
@@ -350,7 +359,7 @@ age 28 or 29! if you think about it has sense, the restriction about the age in 
 28<= age <=30 and the second automata accept words with age < 30, so the combination of both is the first automata
 with a restriction on the age=  28<= age < 30.
 
-To finish we will add the automata of "City", to accept the complete structure:
+To finish we will add the automata of "City", to accept the complete structure, and finish our DFA:
 
 ![complete_automata](/assets/dfa-automata-product-renamed-city.jpg)
 
@@ -358,7 +367,20 @@ And here is the transition table:
 
 ![complete_automata](/assets/dfa-minimized-product-transition-table-city.jpg)
 
-We will use this transition table to create a final program in python to accept or reject the entries (is in \src).
+We will use this transition table to create a final program in python to accept or reject the entries.
+
+### Python implementation
+
+Now we will implement and use the transition table to read from a file with *n* entries and accept or reject according
+to our automata. Thanks to the previous work this will be quite simple, because it's just implement the transition
+table as a list of lists and then, each symbol will represent the column and the row will be the value in that (row, column)
+starting by the initial state (row = A = 0). And in case that the row is equal to "X" (a dead state) we have not to check the entry until the end
+the entry its automatically a not valid entry, and if it finish in the row = "M" (final state), the entry is accepted.
+
+The source code is in the \src folder and read a file of possible entries located in \data folder. And when it's executed
+generate two files, one with the accepted entries and another with the rejected entries.
+
+
 
 
 
