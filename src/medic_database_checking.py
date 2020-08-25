@@ -1,4 +1,3 @@
-import re
 import string
 
 letter_UP = string.ascii_uppercase
