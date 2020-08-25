@@ -14,7 +14,7 @@ class Letter:
 
 
 letter_column = Letter()
-columns = [letter_column, ","] + [str(i) for i in range(10)] + ['C', 'S']
+columns = [letter_column, ','] + [str(i) for i in range(10)] + ['C', 'S']
 
 
 def generate_table(values):
@@ -31,8 +31,18 @@ def get_data(file_path):
     return data
 
 
-def check_entries():
-    pass
+def check_entries(data, transition_table):
+    for entry in data:
+        row = 'A'
+        entry = ''.join(entry.split())
+        for symbol in entry:
+            row = transition_table[rows[row]][columns.index(symbol)]
+
+        print(row)
+        if row == 'K':
+            print(entry, 'ACCEPTED')
+        else:
+            print(entry, 'REJECTED')
 
 
 def print_table(table):
@@ -44,11 +54,10 @@ def print_table(table):
 if __name__ == '__main__':
     path = '../data/doctors_list'
     data_entries = get_data(path)
-    # for entry in data_entries:
-    #     print(entry)
 
     table_values = {'B': [[0, 0], [1, 0]], 'C': [[1, 1]], 'D': [[2, 0], [3, 0]], 'E': [[3, 1]],
                     'F': [[4, 0], [5, 0]], 'G': [[5, 1]], 'H': [[4, 4], [6, 4]], 'I': [[7, 10], [7, 11]],
                     'J': [[8, 1]], 'K': [[9, 12], [9, 13]]}
 
     transition_table = generate_table(table_values)
+    check_entries(data_entries, transition_table)
