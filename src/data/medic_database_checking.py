@@ -27,6 +27,12 @@ def check_entries():
     pass
 
 
+def print_table(table):
+    print('   ', *[[n] for n in range(14)], sep='  ')
+    for n, row in enumerate(table):
+        print([n], row)
+
+
 if __name__ == '__main__':
     path = '../data/doctors_list'
     data_entries = get_data(path)
