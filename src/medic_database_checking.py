@@ -2,8 +2,8 @@ import string
 
 letter_UP = string.ascii_uppercase
 digits = string.digits
-rows = {letter: row for (row, letter) in enumerate(letter_UP[:11])}
-rows.update({'X': 11})
+rows = {letter: row for (row, letter) in enumerate(letter_UP[:13])}
+rows.update({'X': 13})
 
 
 class Letter:
@@ -18,7 +18,7 @@ columns = [letter_column, ','] + [str(i) for i in range(10)] + ['C', 'S']
 
 
 def generate_table(values):
-    table = [["X"] * 14 for _ in range(12)]
+    table = [["X"] * 14 for _ in range(14)]
     for key, value in values.items():
         for index in value:
             table[index[0]][index[1]] = key
@@ -38,11 +38,10 @@ def check_entries(data, transition_table):
         for symbol in entry:
             row = transition_table[rows[row]][columns.index(symbol)]
 
-        print(row)
-        if row == 'K':
-            print(entry, 'ACCEPTED')
+        if row == 'M':
+            print(entry, ' ---> ACCEPTED')
         else:
-            print(entry, 'REJECTED')
+            print(entry, ' ---> REJECTED')
 
 
 def print_table(table):
@@ -52,12 +51,14 @@ def print_table(table):
 
 
 if __name__ == '__main__':
-    path = '../data/doctors_list'
+    path = 'data/doctors_list'
     data_entries = get_data(path)
 
     table_values = {'B': [[0, 0], [1, 0]], 'C': [[1, 1]], 'D': [[2, 0], [3, 0]], 'E': [[3, 1]],
                     'F': [[4, 0], [5, 0]], 'G': [[5, 1]], 'H': [[4, 4], [6, 4]], 'I': [[7, 10], [7, 11]],
-                    'J': [[8, 1]], 'K': [[9, 12], [9, 13]]}
+                    'J': [[8, 1]], 'K': [[9, 0], [10, 0]], 'L': [[10, 1]], 'M': [[11, 12], [11, 13]]}
 
     transition_table = generate_table(table_values)
+    print_table(transition_table)
+
     check_entries(data_entries, transition_table)
