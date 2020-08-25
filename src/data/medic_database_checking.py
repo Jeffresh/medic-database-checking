@@ -46,3 +46,8 @@ if __name__ == '__main__':
     data_entries = get_data(path)
     # for entry in data_entries:
     #     print(entry)
+
+    table_values = {'B': [[0, 0], [1, 0]], 'C': [[1, 1]], 'D': [[2, 0], [3, 0]], 'E': [[3, 1]],
+              'F': [[4, 0], [5, 0]], 'G': [[5, 1]], 'H': [[4, 4], [6, 4]], 'I': [[7, 10], [7, 11]],
+              'J': [[8, 1]], 'K': [[9, 12], [9, 13]]}
+    print_table(generate_table(table_values))
