@@ -40,9 +40,9 @@ Submit a zip file named with your initials, including:
 
 # Report
 
-### RE Desing
+### RE Design
 
-We have to desing the regular expression according with the following structure:
+We have to design the regular expression according with the following structure:
 
 ``` python
 'First Name,First Family Name,Second Family Name (optional),Age,City,Marital Status'
@@ -138,7 +138,7 @@ It we follow the recursive concatenation operations you will observe that the la
 In any programming language this will be achieved with the *RE*:
 
 ```python
-([a-z]+,)([a-z]+,)([a-z]+,)?(2[8-9]|[3-9][0-9]),[CD]
+([a-z]+,)([a-z]+,)([a-z]+,)?(2[8-9]|[3-9][0-9]),([a-z]+,)[CD]
 ```
 
 How you can see, its very similar to the definitions that we constructed in each step, even if you dont know about *REs* in programming, its very understandable.
@@ -160,6 +160,16 @@ The names was a *RE* N that the defines the language N that is composed by all t
 The optional name is just the same *RE* that name but optional, so the automata, using *Kleene closure* and the *Thomson method* the automata is:
 
 ![optional name automata](/assets/name_optional.jpg)
+
+This concatenate with the comma is the only one that you have to do some different to represent it, cannot be
+generated just applying the *Thompson method*, you have to do some modifications so we will to represent explicitly
+in this section:
+
+![optional name automata](/assets/optional-name-comma.jpg)
+
+As you can see we use two more states to put the E-transitions correctly to accept the comma only if the optional
+name is found.
+
 
 #### Age
 
