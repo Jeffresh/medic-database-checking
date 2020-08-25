@@ -33,16 +33,26 @@ def get_data(file_path):
 
 
 def check_entries(data, transition_table):
+    file_acc = open("accepted_entries.txt", 'w')
+    file_rej = open("rejected_entries.txt", 'w')
+
     for entry in data:
         row = 'A'
         entry = ''.join(entry.split())
         for symbol in entry:
             row = transition_table[rows[row]][columns.index(symbol)]
+            if row == 'X':
+                break
 
         if row == 'M':
             print(entry, ' ---> ACCEPTED')
+            file_acc.write(entry + ' ---> ACCEPTED\n')
         else:
             print(entry, ' ---> REJECTED')
+            file_rej.write(entry + ' ---> REJECTED\n')
+
+    file_acc.close()
+    file_rej.close()
 
 
 def print_table(table):
@@ -63,6 +73,3 @@ if __name__ == '__main__':
     print_table(transition_table)
 
     check_entries(data_entries, transition_table)
-
-    re.compile(r'([a - z] +,)([a - z] +, )([a - z] +, )?(2[8 - 9] | [3 - 9][0 - 9]),[CD]')
-
